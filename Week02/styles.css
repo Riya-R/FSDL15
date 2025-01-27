@@ -1,0 +1,35 @@
+/* Simple styling for the table */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Removes space between borders */
+  }
+  
+  th, td {
+    border: 1px solid black; /* Border for table cells */
+    padding: 10px; /* Space inside the cells */
+    text-align: center; /* Center the text inside cells */
+  }
+  
+  th {
+    background-color: #4CAF50; /* Green background for table headers */
+    color: white; /* White text for headers */
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternate row colors */
+  }
+  th::before {
+    content: "😊"; /* Smiley face emoji */
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  td::after {
+    content: " ✅"; /* Checkmark emoji */
+  }
+  p::first-letter {
+    font-size: 30px; /* Make the first letter bigger */
+    color: red; /* Change color to red */
+  }
+  .city::after {
+    content: " 🔥"; /* Fire emoji */
+  }

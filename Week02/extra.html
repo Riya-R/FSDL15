@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hover to Show Image</title>
+  <style>
+    /* Style for the square */
+    .square {
+      width: 100px;
+      height: 100px;
+      background-color: rgb(108, 241, 20);
+      text-align: center;
+      
+    }
+
+    /* Initially hide the image */
+    .square img {
+      display: none;
+      width: 150px;
+      height: auto;
+      border: 2px solid black;
+      border-radius: 10px;
+    }
+
+    /* Show the image when hovering over the square */
+    .square:hover img {
+      display: block;
+    }
+    .square iframe {
+      display: none;
+      width: 500px;
+      height: 300px;
+      border: 2px solid rgb(223, 39, 39);
+      border-radius: 10px;
+    }
+
+    /* Show the image when hovering over the square */
+    .square:hover iframe {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="square">
+    Hover me!
+    <img src="https://i.pinimg.com/736x/56/31/22/56312264db7ff9c2cf7b11a6eccb4633.jpg" alt="Could not Load">
+    <iframe scr="<iframe width="200" height="auto" src="https://www.youtube.com/embed/vyclvUeQ4bo?si=w4BHffUXaWhlrfNl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>"
+  </div>
+</body>
+</html>
