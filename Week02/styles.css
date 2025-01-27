@@ -33,3 +33,35 @@ table {
   .city::after {
     content: " 🔥"; /* Fire emoji */
   }
+  .my-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text color */
+    padding: 15px 32px; /* Top and bottom padding, left and right padding */
+    font-size: 16px; /* Text size */
+    border: none; /* Remove the default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor changes to a pointer when hovering */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+  }
+  
+  /* Hover effect for the button */
+  .my-button:hover {
+    background-color: #45a049; /* Darker green when hovered */
+  }
+  /* Hide the checkbox */
+  #text-toggle {
+    display: none;
+  }
+
+  /* Text container is initially hidden */
+  #text-container {
+    display: none;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #333;
+  }
+
+  /* When the checkbox is checked, show the text */
+  #text-toggle:checked + #text-container {
+    display: block;
+  }
