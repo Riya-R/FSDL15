@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 4 - JavaScript Concepts</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: #0066ff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #004ec2;
+        }
+        .output {
+            margin-top: 15px;
+            padding: 10px;
+            background: #eaf1ff;
+            border-radius: 5px;
+            min-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Task 4: JavaScript Concepts Demo</h1>
+
+
+    <!-- VARIABLES & OPERATORS -->
+    <div class="box">
+        <h2>Variables & Operators</h2>
+        <button onclick="variableDemo()">Run Demo</button>
+        <div id="varOutput" class="output"></div>
+    </div>
+
+
+    <!-- CONDITIONS -->
+    <div class="box">
+        <h2>Conditions</h2>
+        <button onclick="conditionDemo()">Check Age</button>
+        <div id="conditionOutput" class="output"></div>
+    </div>
+
+
+    <!-- LOOPS -->
+    <div class="box">
+        <h2>Loops</h2>
+        <button onclick="loopDemo()">Show Numbers</button>
+        <div id="loopOutput" class="output"></div>
+    </div>
+
+
+    <!-- FUNCTIONS -->
+    <div class="box">
+        <h2>Functions</h2>
+        <button onclick="functionDemo()">Calculate Sum</button>
+        <div id="functionOutput" class="output"></div>
+    </div>
+
+
+    <!-- EVENTS -->
+    <div class="box">
+        <h2>Events</h2>
+        <button id="eventBtn">Click Me</button>
+        <div id="eventOutput" class="output"></div>
+    </div>
+
+
+    <!-- CLASSES & OBJECTS -->
+    <div class="box">
+        <h2>Classes & Objects</h2>
+        <button onclick="classDemo()">Create Object</button>
+        <div id="classOutput" class="output"></div>
+    </div>
+
+
+    <script>
+        /* -------------------- VARIABLES & OPERATORS -------------------- */
+        function variableDemo() {
+            let a = 10;
+            let b = 5;
+            let sum = a + b;
+            let mul = a * b;
+
+            document.getElementById("varOutput").innerHTML =
+                `a = ${a}, b = ${b}<br>Sum = ${sum}, Multiplication = ${mul}`;
+        }
+
+
+        /* -------------------- CONDITIONS -------------------- */
+        function conditionDemo() {
+            let age = 18;
+
+            if (age >= 18) {
+                document.getElementById("conditionOutput").innerHTML =
+                    "You are eligible to vote!";
+            } else {
+                document.getElementById("conditionOutput").innerHTML =
+                    "You are NOT eligible.";
+            }
+        }
+
+
+        /* -------------------- LOOPS -------------------- */
+        function loopDemo() {
+            let text = "";
+            for (let i = 1; i <= 5; i++) {
+                text += i + " ";
+            }
+            document.getElementById("loopOutput").innerHTML = text;
+        }
+
+
+        /* -------------------- FUNCTIONS -------------------- */
+        function addNumbers(x, y) {
+            return x + y;
+        }
+
+        function functionDemo() {
+            let result = addNumbers(10, 20);
+            document.getElementById("functionOutput").innerHTML =
+                "Sum of 10 and 20 = " + result;
+        }
+
+
+        /* -------------------- EVENTS -------------------- */
+        document.getElementById("eventBtn").addEventListener("click", function () {
+            document.getElementById("eventOutput").innerHTML =
+                "Button clicked! This is an event.";
+        });
+
+
+        /* -------------------- CLASSES & OBJECTS -------------------- */
+        class Student {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            details() {
+                return `Name: ${this.name}, Age: ${this.age}`;
+            }
+        }
+
+        function classDemo() {
+            let s1 = new Student("Riya", 19);
+            document.getElementById("classOutput").innerHTML = s1.details();
+        }
+    </script>
+
+</body>
+</html>

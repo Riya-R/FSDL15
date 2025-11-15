@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5 - JS Concepts</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f6fb;
+            padding: 20px;
+        }
+        .box {
+            background: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        button {
+            padding: 8px 18px;
+            background: #0057ff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #003fbe;
+        }
+        .output {
+            background: #eef3ff;
+            padding: 12px;
+            margin-top: 12px;
+            border-radius: 6px;
+            min-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Task 5: JavaScript Error Handling, Validation, Arrays & More</h1>
+
+    <!-- ERROR HANDLING -->
+    <div class="box">
+        <h2>Error Handling (try-catch)</h2>
+        <button onclick="errorDemo()">Run Error Demo</button>
+        <div class="output" id="errorOutput"></div>
+    </div>
+
+    <!-- FORM VALIDATION -->
+    <div class="box">
+        <h2>Validation Example</h2>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button onclick="validateForm()">Validate</button>
+        <div class="output" id="validationOutput"></div>
+    </div>
+
+    <!-- ARRAYS -->
+    <div class="box">
+        <h2>Array Example</h2>
+        <button onclick="arrayDemo()">Show Fruits</button>
+        <div class="output" id="arrayOutput"></div>
+    </div>
+
+    <!-- STRING -->
+    <div class="box">
+        <h2>String Operations</h2>
+        <button onclick="stringDemo()">Run String Demo</button>
+        <div class="output" id="stringOutput"></div>
+    </div>
+
+    <!-- DATE -->
+    <div class="box">
+        <h2>Date Example</h2>
+        <button onclick="dateDemo()">Show Date</button>
+        <div class="output" id="dateOutput"></div>
+    </div>
+
+
+
+    <script>
+        /* -------------------- ERROR HANDLING -------------------- */
+        function errorDemo() {
+            try {
+                // Trying to use an undefined variable
+                let result = unknownVariable + 5;
+                document.getElementById("errorOutput").innerHTML = result;
+            } catch (error) {
+                document.getElementById("errorOutput").innerHTML =
+                    "Error caught: " + error.message;
+            }
+        }
+
+
+        /* -------------------- FORM VALIDATION -------------------- */
+        function validateForm() {
+            let name = document.getElementById("nameInput").value;
+
+            if (name.trim() === "") {
+                document.getElementById("validationOutput").innerHTML =
+                    "❌ Name cannot be empty!";
+            } else if (!isNaN(name)) {
+                document.getElementById("validationOutput").innerHTML =
+                    "❌ Name cannot be numbers!";
+            } else {
+                document.getElementById("validationOutput").innerHTML =
+                    "✔️ Valid name!";
+            }
+        }
+
+
+        /* -------------------- ARRAYS -------------------- */
+        function arrayDemo() {
+            let fruits = ["Apple", "Banana", "Orange", "Mango"];
+            let text = "Fruits: " + fruits.join(", ");
+
+            document.getElementById("arrayOutput").innerHTML = text;
+        }
+
+
+        /* -------------------- STRING OPERATIONS -------------------- */
+        function stringDemo() {
+            let str = "Hello JavaScript";
+
+            let length = str.length;
+            let upper = str.toUpperCase();
+            let slice = str.slice(0, 5);
+
+            document.getElementById("stringOutput").innerHTML =
+                `Original: ${str}<br>
+                 Length: ${length}<br>
+                 Uppercase: ${upper}<br>
+                 Slice(0-5): ${slice}`;
+        }
+
+
+        /* -------------------- DATE -------------------- */
+        function dateDemo() {
+            let today = new Date();
+
+            document.getElementById("dateOutput").innerHTML =
+                "Current Date & Time: " + today.toString();
+        }
+    </script>
+
+</body>
+</html>
